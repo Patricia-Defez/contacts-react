@@ -1,29 +1,19 @@
 import axios from 'axios'
 
-const API_URL = 'https://ironbeer-api.herokuapp.com/beers/'
+const API_URL = 'http://localhost:5000/contacts'
 
 const http = axios.create({
   baseURL: API_URL
 })
 
-const list = () => {
-  return http.get(`/`)
-}
+const list = () => { http.get(`/`) }
 
-const create = () => {
-  return http.post(`/`)
-}
+const create = (contact) => { http.post(`/`), contact }
 
-const get = () => {
-  return http.get(`/${id}`)
-}
+const getOne = (id) => { http.get(`/${id}`) }
 
-const delete = () => {
-  return http.delete(`/${id}`)
-}
+const deleteOne = (id) => { http.delete(`/${id}`) }
 
-const update = () => {
-  return http.put(`/${id}`)
-}
+const update = (id) => { http.put(`/${id}`) }
 
-export { list, create, get, delete, update };
+export { list, create, getOne, deleteOne, update };
